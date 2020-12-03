@@ -1,0 +1,57 @@
+#include <windows.h>
+
+void SymbolOutput(HANDLE hout, COORD point);
+
+int main()
+{
+    HANDLE hout = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD point;
+    int counter = 0, i = 12, j = 68, n = 11; // counter, point coordinates and edge offset. //
+    while (counter < 24 * 80)
+    {
+        point.Y = i;
+        for (; j >= n; j--)
+        {
+            point.X = j;
+            SymbolOutput(hout, point);
+            counter++;
+        }
+        i--;
+        point.X = ++j;
+        for (; i >= n; i--)
+        {
+            point.Y = i;
+            SymbolOutput(hout, point);
+            counter++;
+        }
+        j++;
+        point.Y = ++i;
+        for (; j <= 80 - n && j < 80; j++)
+        {
+            point.X = j;
+            SymbolOutput(hout, point);
+            counter++;
+        }
+        i++;
+        point.X = --j;
+        for (; i <= 23-n && i > 1; i++)
+        {
+            point.Y = i;
+            SymbolOutput(hout, point);
+            counter++;
+        }
+        n--;
+    }
+
+    point.Y = 24;
+    point.X = 0;
+    SetConsoleCursorPosition(hout, point);
+    return 0;
+}
+
+void SymbolOutput(HANDLE hout, COORD point)
+{
+    SetConsoleCursorPosition(hout, point);
+    WriteConsole(hout, "*", 1, NULL, NULL);
+    Sleep(10); // Delay time //
+}
