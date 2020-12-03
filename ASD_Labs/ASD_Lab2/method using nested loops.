@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+int main () {
+	int n;
+	printf("Enter the number -> ");
+	scanf_s("%d", &n);
+	double sum = 0, multiply = 1;
+	int counter = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			sum += sin(j);
+			counter += 5; // <= | ++ | sum computation | call of (sin) function| jmp.//
+		}
+		multiply *= (cos(i) + 1) / sum;
+		sum = 0;
+		counter += 7; // <= | ++ | multiply computation | call of (cos) function| + | / | jmp.//
+	}
+	printf("Result: %.7f \n\n", multiply);
+	printf("Number of operations: %d \n", counter);
+    
+	return 0;
+}
