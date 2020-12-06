@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+#define i 9
+#define j 8
+
+int main() {
+    double matrix[i][j] = {
+        {1, 1, 2, 2, 2, 3, 3, 3},
+        {4, -5, 6, 7, -8, 9, 4, 3},
+        {3, 5, -7, 6, -7, 4, 6, 4},
+        {2, 4, -5, 7, -8, 4, -3, 4},
+        {4, -6, 4, 5, 31, -7, 6, 4},
+        {4, 0.5, 2, 6, -0.18, 7, 65, 5},
+        {5, 9, -78, 4, 27, -0.25, 54, 5},
+        {6, 6 ,-7, 6, 7, 8, 5},
+        {5, 6, 7, 9, -4, 0.67, 5} };
+    float x;
+    printf("Input your number 1-->");
+    scanf_s("%f", &x);
+    if (x < 1 || x > 3) {
+        printf("Your number is not included in the matrix\n");
+    }
+    else {
+        int l = 0;
+        int r = 7;
+        int mid = 0;
+        while (l < r) {
+            mid = (l + r) / 2;
+            if (matrix[0][mid] >= x) {
+                r = mid;
+            }
+            else {
+                l = mid + 1;
+            }
+        }
+        printf("coords:[0][%d]\n\n ", l);
+    }
+    printf("Input your number 2-->");
+    scanf_s("%f", &x);
+    if (x < 3 || x > 5) {
+        printf("Your number is not included in the matrix\n");
+    }
+    else {
+       int l = 0;
+       int r = 8;
+       int mid = 0;
+        while (l < r) {
+            mid = (l + r) / 2;
+            if (matrix[mid][r] >= x) {
+                r = mid;
+            }
+            else {
+                l = mid + 1;
+            }
+        }
+        printf("coords:[%d][7] ", l);
+    }
+       
+
+    return 0;
+}
