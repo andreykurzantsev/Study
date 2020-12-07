@@ -1,0 +1,5 @@
+"use stric";
+function library(name) {
+    console.log("The new book name is:" + name);
+}
+library("Three Musketeers")
