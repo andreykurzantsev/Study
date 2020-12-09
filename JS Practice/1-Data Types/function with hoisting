@@ -1,4 +1,4 @@
-"use stric";
+"use strict";
 function library(name) {
     console.log("The new book name is:" + name);
 }
