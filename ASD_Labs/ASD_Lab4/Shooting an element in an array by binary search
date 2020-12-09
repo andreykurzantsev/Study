@@ -46,7 +46,7 @@ int main() {
        int mid = 0;
         while (l < r) {
             mid = (l + r) / 2;
-            if (matrix[mid][r] >= x) {
+            if (matrix[mid][7] >= x) {
                 r = mid;
             }
             else {
