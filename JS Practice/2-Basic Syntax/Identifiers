@@ -1,6 +1,6 @@
 'use strict';
 let NAME = "ANDREY";
-const Bornyear = 2003;
+const BORN_YEAR = 2003;
 function wellcome (name){
     console.log("Hello " + name+ " !!!" )
 }
