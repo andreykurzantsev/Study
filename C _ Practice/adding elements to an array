@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float arr[8] = { 0 };
+    int i = 8;
+    float multiply = 1;
+    float x;
+    int top = 1;
+    printf("Input X: ");
+    scanf_s("%f", &x);
+    for (int k = 1; k < i; k++) {
+        multiply *= (cos(x / pow(2, k)));
+        arr[top] = multiply;
+        top++;
+
+    }
+    for (int i = 0; i < 8; i++) {
+        printf("%f ", arr[i]);
+    }
+
+    return 0;
+}
