@@ -1,0 +1,49 @@
+'use strict';
+
+let arr1 = [true, 'hello', 5, 12, -200, false, false, 'word', new Object(), null, undefined];
+let collect = {
+    boolean: 0,
+    number: 0,
+    object: 0,
+    string: 0,
+    undefined: 0,
+};
+
+let count = function (...arr1) {
+    for (let key of arr1) {
+        collect[typeof key]++
+    }
+    console.log({ collect });
+}
+count(...arr1);
+
+for (let key in collect) {
+    delete collect[key];
+}
+console.log({ collect });
+
+for (let i = 0; i < arr1.length; i++) {
+    let a = typeof arr1[i];
+    if (collect.hasOwnProperty(collect[a])) continue;
+    collect[a] = 0;
+}
+
+console.log({ collect });
+let count2 = function () {
+    for (let key of arr1) {
+        switch (typeof key) {
+            case 'number': collect.number++;
+                break;
+            case 'string': collect.string++;
+                break;
+            case 'boolean': collect.boolean++;
+                break;
+            case 'object': collect.object++;
+                break;
+            case 'undefined': collect.undefined++;
+                break;
+        }
+    }
+    console.log({ collect });
+}
+count2();
