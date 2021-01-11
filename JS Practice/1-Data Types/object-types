@@ -24,7 +24,7 @@ console.log({ collect });
 
 for (let i = 0; i < arr1.length; i++) {
     let a = typeof arr1[i];
-    if (collect.hasOwnProperty(collect[a])==true) continue;
+    if (collect.hasOwnProperty(collect[a])===true) continue;
     collect[a] = 0;
 }
 
