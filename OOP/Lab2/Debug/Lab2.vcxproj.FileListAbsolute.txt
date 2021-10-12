@@ -1,0 +1,5 @@
+C:\Users\Денис\Documents\GitHub\OOP-Labs\Lab2\Debug\Lab2.exe
+C:\Users\Денис\Documents\GitHub\OOP-Labs\Lab2\Debug\Lab2.pdb
+C:\Users\Asus\Desktop\Lab2\Debug\Lab2.exe
+D:\LabOOP\Lab2\Debug\Lab2.exe
+D:\Study\OOP\Lab2\Debug\Lab2.exe
