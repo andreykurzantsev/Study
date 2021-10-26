@@ -3,7 +3,7 @@
 #include "shape_editor.h"
 #include "shape.h"
 
-const int Size_Of_Array = 116;
+const int Size_Of_Array = 117;
 Shape* pcshape[Size_Of_Array];
 int createdobj = 0;
 bool isPressed;
