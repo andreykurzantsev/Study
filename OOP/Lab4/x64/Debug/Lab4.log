@@ -1,0 +1,3 @@
+﻿  toolbar.cpp
+D:\Study\OOP\Lab4\toolbar.cpp(133,12): warning C4101: 'pText': unreferenced local variable
+  Lab4.vcxproj -> D:\Study\OOP\Lab4\x64\Debug\Lab4.exe
