@@ -15,7 +15,7 @@ void PointShape::Show(HDC hdc)
 	SetPixel(hdc, xs1, ys1, black);
 }
 
-void PointShape::Trail(HDC hdc) {}
+void PointShape::Trace(HDC hdc) {}
 
 Shape* PointShape::Duplicate()
 {
@@ -33,7 +33,7 @@ void LineShape::Show(HDC hdc)
 	DeleteObject(hPen);
 }
 
-void LineShape::Trail(HDC hdc)
+void LineShape::Trace(HDC hdc)
 {
 	HPEN hPen, hPenOld;
 	hPen = CreatePen(PS_DOT, 1, black);
@@ -64,7 +64,7 @@ void RectangleShape::Show(HDC hdc)
 	DeleteObject(hPen);
 }
 
-void RectangleShape::Trail(HDC hdc)
+void RectangleShape::Trace(HDC hdc)
 {
 	HPEN hPen, hPenOld;
 	hPen = CreatePen(PS_DOT, 1, black);
@@ -100,7 +100,7 @@ void EllipseShape::Show(HDC hdc)
   DeleteObject(hPen);
 };
 
-void EllipseShape::Trail(HDC hdc)
+void EllipseShape::Trace(HDC hdc)
 {
   HPEN hPen, hPenOld;
   hPen = CreatePen(PS_DOT, 1, black);
@@ -134,20 +134,20 @@ void LineOOShape::Show(HDC hdc)
 	LineShape::Set(x1, y1, x2, y2);
 }
 
-void LineOOShape::Trail(HDC hdc)
+void LineOOShape::Trace(HDC hdc)
 {
 	x1 = xs1;
 	y1 = ys1;
 	x2 = xs2;
 	y2 = ys2;
 	LineShape::Set(x1, y1, x2, y2);
-	LineShape::Trail(hdc);
+	LineShape::Trace(hdc);
 	EllipseShape::Set(x1, y1,
 		x1 - dumbComb, y1 - dumbComb);
-	EllipseShape::Trail(hdc);
+	EllipseShape::Trace(hdc);
 	EllipseShape::Set(x2, y2,
 		x2 - dumbComb, y2 - dumbComb);
-	EllipseShape::Trail(hdc);
+	EllipseShape::Trace(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
 
@@ -183,27 +183,27 @@ void CubeShape::Show(HDC hdc)
 	LineShape::Set(x1, y1, x2, y2);
 }
 
-void CubeShape::Trail(HDC hdc)
+void CubeShape::Trace(HDC hdc)
 {
 	x1 = xs1; y1 = ys1; x2 = xs2; y2 = ys2;
 	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x1 + paralellComb, y1 + paralellComb);
-	RectangleShape::Trail(hdc);
+	RectangleShape::Trace(hdc);
 	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
 		x2 + paralellComb, y2 + paralellComb);
-	RectangleShape::Trail(hdc);
+	RectangleShape::Trace(hdc);
 	LineShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x2 - paralellComb, y2 - paralellComb);
-	LineShape::Trail(hdc);
+	LineShape::Trace(hdc);
 	LineShape::Set(x1 - paralellComb, y1 + paralellComb,
 		x2 - paralellComb, y2 + paralellComb);
-	LineShape::Trail(hdc);
+	LineShape::Trace(hdc);
 	LineShape::Set(x1 + paralellComb, y1 + paralellComb,
 		x2 + paralellComb, y2 + paralellComb);
-	LineShape::Trail(hdc);
+	LineShape::Trace(hdc);
 	LineShape::Set(x1 + paralellComb, y1 - paralellComb,
 		x2 + paralellComb, y2 - paralellComb);
-	LineShape::Trail(hdc);
+	LineShape::Trace(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
 

@@ -12,7 +12,7 @@ protected:
 public:
 	void Set(long x1, long y1, long x2, long y2);
 	virtual void Show(HDC) = 0;
-	virtual void Trail(HDC) = 0;
+	virtual void Trace(HDC) = 0;
 	virtual Shape* Duplicate() = 0;
 	~Shape();
 };
@@ -20,7 +20,7 @@ public:
 class PointShape : public Shape
 {
 	virtual void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };
 
@@ -28,7 +28,7 @@ class LineShape : public virtual Shape
 {
 public:
 	virtual void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };
 
@@ -36,7 +36,7 @@ class RectangleShape : public virtual Shape
 {
 public:
 	virtual void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };
 
@@ -44,7 +44,7 @@ class EllipseShape : public virtual Shape
 {
 public:
 	virtual void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };
 
@@ -52,7 +52,7 @@ class CubeShape : public RectangleShape, public LineShape
 {
 public:
 	void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };
 
@@ -60,6 +60,6 @@ class LineOOShape : public LineShape, public EllipseShape
 {
 public:
 	void Show(HDC);
-	void Trail(HDC);
+	void Trace(HDC);
 	virtual Shape* Duplicate();
 };

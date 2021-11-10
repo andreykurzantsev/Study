@@ -56,14 +56,14 @@ void MyEditor::OnMouseMove(HWND hWnd)
 		SetROP2(hdc, R2_NOTXORPEN);
 		MoveToEx(hdc, x1, y1, NULL);
 		pcshape[size]->Set(x1, y1, x2, y2);
-		pcshape[size]->Trail(hdc);
+		pcshape[size]->Trace(hdc);
 		GetCursorPos(&pt);
 		ScreenToClient(hWnd, &pt);
 		x2 = pt.x;
 		y2 = pt.y;
 		MoveToEx(hdc, x1, y1, NULL);
 		pcshape[size]->Set(x1, y1, x2, y2);
-		pcshape[size]->Trail(hdc);
+		pcshape[size]->Trace(hdc);
 		ReleaseDC(hWnd, hdc);
 	}
 }
