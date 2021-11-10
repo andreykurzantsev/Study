@@ -5,7 +5,7 @@ void Toolbar::NotifyText(LPTOOLTIPTEXT lpttt, LPCSTR text) {
     lstrcpy(lpttt->szText, text);
 }
 
-void Toolbar::OnCreate(HWND hWnd)
+void Toolbar::OnCreate(HWND hWnd, HINSTANCE hInst)
 {
     TBBUTTON tbb[7];
     ZeroMemory(tbb, sizeof(tbb));

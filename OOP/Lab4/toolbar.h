@@ -21,7 +21,7 @@ private:
 	void NotifyText(LPTOOLTIPTEXT lpttt, LPCSTR text);
 public:
 	void OnSize(HWND hWnd);
-	void OnCreate(HWND hWnd);
+	void OnCreate(HWND hWnd, HINSTANCE hInst);
 	void OnNotify(HWND hWnd, LPARAM lParam);
 	void OnToolPoint(HWND hWnd);
 	void OnToolLine(HWND hWnd);

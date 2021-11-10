@@ -1,5 +1,7 @@
-﻿#include "colors.h"
-
+﻿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by Lab4.rc
+//
 #define IDC_MYICON                      2
 #define IDD_LAB3_DIALOG                 102
 #define IDS_APP_TITLE                   103
@@ -13,12 +15,12 @@
 #define IDM_LINE                        32806
 #define IDM_RECTANGLE                   32807
 #define IDM_ELLIPSE                     32809
-#define IDM_LINEOO						32810
-#define IDM_CUBE						32811
+#define IDM_LINEOO                      32810
+#define IDM_CUBE                        32811
 #define IDC_STATIC                      -1
 
-extern HINSTANCE hInst;
-
+// Next default values for new objects
+// 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NO_MFC                     1

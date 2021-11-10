@@ -115,7 +115,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
     case WM_CREATE:
-        toolbar.OnCreate(hWnd);
+        toolbar.OnCreate(hWnd, hInst);
         break;
     case WM_SIZE:
         toolbar.OnSize(hWnd);
