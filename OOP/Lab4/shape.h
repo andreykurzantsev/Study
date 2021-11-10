@@ -5,8 +5,8 @@
 class Shape
 {
 protected:
-	const int lineooMerge = 20;
-	const int cubeMerge = 50;
+	const int dumbComb = 20;
+	const int paralellComb = 50;
 	long x1, x2, y1, y2;
 	long xs1, ys1, xs2, ys2;
 public:

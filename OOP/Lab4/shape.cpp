@@ -126,10 +126,10 @@ void LineOOShape::Show(HDC hdc)
 	LineShape::Set(x1, y1, x2, y2);
 	LineShape::Show(hdc);
 	EllipseShape::Set(x1, y1,
-		x1 - lineooMerge, y1 - lineooMerge);
+		x1 - dumbComb, y1 - dumbComb);
 	EllipseShape::Show(hdc);
 	EllipseShape::Set(x2, y2,
-		x2 - lineooMerge, y2 - lineooMerge);
+		x2 - dumbComb, y2 - dumbComb);
 	EllipseShape::Show(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
@@ -143,10 +143,10 @@ void LineOOShape::Trail(HDC hdc)
 	LineShape::Set(x1, y1, x2, y2);
 	LineShape::Trail(hdc);
 	EllipseShape::Set(x1, y1,
-		x1 - lineooMerge, y1 - lineooMerge);
+		x1 - dumbComb, y1 - dumbComb);
 	EllipseShape::Trail(hdc);
 	EllipseShape::Set(x2, y2,
-		x2 - lineooMerge, y2 - lineooMerge);
+		x2 - dumbComb, y2 - dumbComb);
 	EllipseShape::Trail(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
@@ -162,23 +162,23 @@ void CubeShape::Show(HDC hdc)
 	y1 = ys1; 
 	x2 = xs2; 
 	y2 = ys2;
-	RectangleShape::Set(x1 - cubeMerge, y1 - cubeMerge,
-		x1 + cubeMerge, y1 + cubeMerge);
+	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
+		x1 + paralellComb, y1 + paralellComb);
 	RectangleShape::Show(hdc);
-	RectangleShape::Set(x2 - cubeMerge, y2 - cubeMerge,
-		x2 + cubeMerge, y2 + cubeMerge);
+	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
+		x2 + paralellComb, y2 + paralellComb);
 	RectangleShape::Show(hdc);
-	LineShape::Set(x1 - cubeMerge, y1 - cubeMerge,
-		x2 - cubeMerge, y2 - cubeMerge);
+	LineShape::Set(x1 - paralellComb, y1 - paralellComb,
+		x2 - paralellComb, y2 - paralellComb);
 	LineShape::Show(hdc);
-	LineShape::Set(x1 - cubeMerge, y1 + cubeMerge,
-		x2 - cubeMerge, y2 + cubeMerge);
+	LineShape::Set(x1 - paralellComb, y1 + paralellComb,
+		x2 - paralellComb, y2 + paralellComb);
 	LineShape::Show(hdc);
-	LineShape::Set(x1 + cubeMerge, y1 + cubeMerge,
-		x2 + cubeMerge, y2 + cubeMerge);
+	LineShape::Set(x1 + paralellComb, y1 + paralellComb,
+		x2 + paralellComb, y2 + paralellComb);
 	LineShape::Show(hdc);
-	LineShape::Set(x1 + cubeMerge, y1 - cubeMerge,
-		x2 + cubeMerge, y2 - cubeMerge);
+	LineShape::Set(x1 + paralellComb, y1 - paralellComb,
+		x2 + paralellComb, y2 - paralellComb);
 	LineShape::Show(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
@@ -186,23 +186,23 @@ void CubeShape::Show(HDC hdc)
 void CubeShape::Trail(HDC hdc)
 {
 	x1 = xs1; y1 = ys1; x2 = xs2; y2 = ys2;
-	RectangleShape::Set(x1 - cubeMerge, y1 - cubeMerge,
-		x1 + cubeMerge, y1 + cubeMerge);
+	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
+		x1 + paralellComb, y1 + paralellComb);
 	RectangleShape::Trail(hdc);
-	RectangleShape::Set(x2 - cubeMerge, y2 - cubeMerge,
-		x2 + cubeMerge, y2 + cubeMerge);
+	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
+		x2 + paralellComb, y2 + paralellComb);
 	RectangleShape::Trail(hdc);
-	LineShape::Set(x1 - cubeMerge, y1 - cubeMerge,
-		x2 - cubeMerge, y2 - cubeMerge);
+	LineShape::Set(x1 - paralellComb, y1 - paralellComb,
+		x2 - paralellComb, y2 - paralellComb);
 	LineShape::Trail(hdc);
-	LineShape::Set(x1 - cubeMerge, y1 + cubeMerge,
-		x2 - cubeMerge, y2 + cubeMerge);
+	LineShape::Set(x1 - paralellComb, y1 + paralellComb,
+		x2 - paralellComb, y2 + paralellComb);
 	LineShape::Trail(hdc);
-	LineShape::Set(x1 + cubeMerge, y1 + cubeMerge,
-		x2 + cubeMerge, y2 + cubeMerge);
+	LineShape::Set(x1 + paralellComb, y1 + paralellComb,
+		x2 + paralellComb, y2 + paralellComb);
 	LineShape::Trail(hdc);
-	LineShape::Set(x1 + cubeMerge, y1 - cubeMerge,
-		x2 + cubeMerge, y2 - cubeMerge);
+	LineShape::Set(x1 + paralellComb, y1 - paralellComb,
+		x2 + paralellComb, y2 - paralellComb);
 	LineShape::Trail(hdc);
 	LineShape::Set(x1, y1, x2, y2);
 }
