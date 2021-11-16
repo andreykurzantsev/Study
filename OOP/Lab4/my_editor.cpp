@@ -3,7 +3,7 @@
 #include "my_editor.h"
 #include "toolbar.h"
 
-const int Size_Of_Array = 102;
+const int Size_Of_Array = 117;
 Shape** pcshape = new Shape * [Size_Of_Array];
 int size = 0;
 bool isPressed;

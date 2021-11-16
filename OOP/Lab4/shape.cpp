@@ -55,8 +55,9 @@ void RectangleShape::Show(HDC hdc)
 	HBRUSH hBrush, hBrushOld;
 	hPen = CreatePen(PS_SOLID, 1, black);
 	hPenOld = (HPEN)SelectObject(hdc, hPen);
-	hBrush = CreateSolidBrush(NULL_BRUSH);
-	hBrushOld = (HBRUSH)SelectObject(hdc, GetStockObject(NULL_BRUSH));
+
+	hBrush = CreateSolidBrush(RGB(192, 192, 192));
+	hBrushOld = (HBRUSH)SelectObject(hdc, hBrush);
 	Rectangle(hdc, xs1, ys1, xs2, ys2);
 	SelectObject(hdc, hBrushOld);
 	DeleteObject(hBrush);
@@ -158,15 +159,12 @@ Shape* LineOOShape::Duplicate()
 
 void CubeShape::Show(HDC hdc)
 {
-	x1 = xs1; 
-	y1 = ys1; 
-	x2 = xs2; 
-	y2 = ys2;
+	//x1 = xs1; 
+	//y1 = ys1; 
+	//x2 = xs2; 
+	//y2 = ys2;
 	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x1 + paralellComb, y1 + paralellComb);
-	RectangleShape::Show(hdc);
-	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
-		x2 + paralellComb, y2 + paralellComb);
 	RectangleShape::Show(hdc);
 	LineShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x2 - paralellComb, y2 - paralellComb);
@@ -181,6 +179,9 @@ void CubeShape::Show(HDC hdc)
 		x2 + paralellComb, y2 - paralellComb);
 	LineShape::Show(hdc);
 	LineShape::Set(x1, y1, x2, y2);
+	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
+		x2 + paralellComb, y2 + paralellComb);
+	RectangleShape::Show(hdc);
 }
 
 void CubeShape::Trace(HDC hdc)
