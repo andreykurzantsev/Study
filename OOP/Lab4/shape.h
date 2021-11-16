@@ -6,7 +6,7 @@ class Shape
 {
 protected:
 	const int dumbComb = 20;
-	const int paralellComb = 50;
+	int paralellComb;
 	long x1, x2, y1, y2;
 	long xs1, ys1, xs2, ys2;
 public:

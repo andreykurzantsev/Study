@@ -11,11 +11,7 @@ int allMenus[6] = { IDM_POINT, IDM_LINE, IDM_RECTANGLE, IDM_ELLIPSE, IDM_LINEOO,
 
 MyEditor::~MyEditor()
 {
-	for (int i = 0; i < size; i++)
-	{
-		delete pcshape[i];
-	}
-	delete* pcshape;
+	delete[] pcshape;
 }
 
 void MyEditor::Start(Shape* shape)

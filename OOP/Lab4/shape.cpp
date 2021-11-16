@@ -1,7 +1,6 @@
 #include "shape.h"
 
 
-
 void Shape::Set(long x1, long y1, long x2, long y2)
 {
 	xs1 = x1;
@@ -159,10 +158,6 @@ Shape* LineOOShape::Duplicate()
 
 void CubeShape::Show(HDC hdc)
 {
-	//x1 = xs1; 
-	//y1 = ys1; 
-	//x2 = xs2; 
-	//y2 = ys2;
 	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x1 + paralellComb, y1 + paralellComb);
 	RectangleShape::Show(hdc);
@@ -178,7 +173,7 @@ void CubeShape::Show(HDC hdc)
 	LineShape::Set(x1 + paralellComb, y1 - paralellComb,
 		x2 + paralellComb, y2 - paralellComb);
 	LineShape::Show(hdc);
-	LineShape::Set(x1, y1, x2, y2);
+	//LineShape::Set(x1, y1, x2, y2);
 	RectangleShape::Set(x2 - paralellComb, y2 - paralellComb,
 		x2 + paralellComb, y2 + paralellComb);
 	RectangleShape::Show(hdc);
@@ -187,6 +182,7 @@ void CubeShape::Show(HDC hdc)
 void CubeShape::Trace(HDC hdc)
 {
 	x1 = xs1; y1 = ys1; x2 = xs2; y2 = ys2;
+	paralellComb = x2 - x1;
 	RectangleShape::Set(x1 - paralellComb, y1 - paralellComb,
 		x1 + paralellComb, y1 + paralellComb);
 	RectangleShape::Trace(hdc);
@@ -205,7 +201,7 @@ void CubeShape::Trace(HDC hdc)
 	LineShape::Set(x1 + paralellComb, y1 - paralellComb,
 		x2 + paralellComb, y2 - paralellComb);
 	LineShape::Trace(hdc);
-	LineShape::Set(x1, y1, x2, y2);
+	//LineShape::Set(x1, y1, x2, y2);
 }
 
 Shape* CubeShape::Duplicate()
