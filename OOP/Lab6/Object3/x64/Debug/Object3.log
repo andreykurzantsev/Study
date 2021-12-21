@@ -1,0 +1,9 @@
+﻿  Object3.cpp
+D:\Lab6\Object3\Object3.cpp(249,32): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+D:\Lab6\Object3\Object3.cpp(253,33): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+  Generating code
+  1 of 94 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Object3.vcxproj -> D:\Lab6\x64\Debug\Object3.exe
