@@ -85,6 +85,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN,
 		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+	AddClipboardFormatListener(hWnd);
 
 	if (!hWnd)
 	{
@@ -153,12 +154,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
+	case WM_CLIPBOARDUPDATE:
+		GetTextFromClipboard(hWnd, bufferText, sizeof(bufferText));
+		break;
 	case WM_PAINT:
 	{
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 		string tempBufferForMatrixString;
-
 
 
 		if (bufferText != tempBufferForMatrixString) {
@@ -170,7 +173,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			int tempCounter = 0;
 			while (tempCounter < tempBufferForMatrixString.size())
 			{
-				num = tempBufferForMatrixString[tempCounter];// multiply 2 cuz after num is space in buffer
+				num = tempBufferForMatrixString[tempCounter];
 				if (num == "-") {
 					num += tempBufferForMatrixString[tempCounter + 1];
 					tempCounter++;

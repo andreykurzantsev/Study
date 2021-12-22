@@ -78,12 +78,12 @@ void OnOk(HWND hDlg)
     catch (...)
     {
         MessageBox(hDlg, "Incorrect Format", "Error", MB_OK | MB_ICONERROR);
+        return;
     }
 
-    if (n_MOD1 == NULL  || Min_MOD1 == NULL || Max_MOD1 == NULL )
+    if (n_MOD1 == NULL)
     {
         DialogBox(hInstCurrent, MAKEINTRESOURCE(IDD_WARNING_NULL), hDlg, Warning_MOD1);
-        return;
     }
 
     if (Max_MOD1 > 9)

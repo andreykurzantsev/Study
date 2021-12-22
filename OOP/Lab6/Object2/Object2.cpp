@@ -194,6 +194,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 void CreateMatrix(HWND hWnd)
 {
+	clipboardMatrix = "";
+	copyMatrix = "";
 	int** matrix = new int* [n_MOD2];
 	for (int i = 0; i < n_MOD2; ++i)
 	{
