@@ -39,4 +39,4 @@ function fib(a) {
     }
 
 }
-console.log(fib(4));
+console.log(fib(12));
